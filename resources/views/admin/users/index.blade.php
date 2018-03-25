@@ -1,7 +1,2 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: m3arafa
- * Date: 24/03/18
- * Time: 04:46 م
- */
+
+<h2>admin users index working.</h2>
