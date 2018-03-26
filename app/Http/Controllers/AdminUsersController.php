@@ -43,7 +43,17 @@ class AdminUsersController extends Controller
     public function store(UsersRequest $request)
     {
 
-        $input = $request->all();
+        if (trim($request->password) == '') {
+            $input = $request->except('password');
+        }else{
+
+            $input = $request->all();
+
+            $input['password'] = bcrypt($request->password);
+
+        }
+
+
 
         if ($path = $request->file('photo_id')) {
 
@@ -57,8 +67,6 @@ class AdminUsersController extends Controller
 
         }
 
-
-        $input['password'] = bcrypt($request->password);
 
 
         User::create($input);
@@ -107,7 +115,16 @@ class AdminUsersController extends Controller
 
         $user = User::findOrFail($id);
 
-        $input = $request->all();
+        if (trim($request->password) == '') {
+            $input = $request->except('password');
+        }else{
+
+            $input = $request->all();
+
+            $input['password'] = bcrypt($request->password);
+
+        }
+
 
         if ($path = $request->file('photo_id')) {
 
@@ -121,7 +138,6 @@ class AdminUsersController extends Controller
 
         }
 
-        $input['password'] = bcrypt($request->password);
 
         $user->update($input);
 
