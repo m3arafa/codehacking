@@ -33,5 +33,21 @@ class User extends Authenticatable
     {
         return $this->belongsTo('App\Photo');
     }
+    //her is function setPasswordAttribute missing
+
+    // create function isAdmin
+
+    public function isAdmin()
+    {
+
+        if ($this->role->name == "administrator") {
+
+            return true;
+
+        }
+
+        return false;
+
+    }
 
 }
