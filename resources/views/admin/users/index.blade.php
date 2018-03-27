@@ -4,6 +4,12 @@
 
 @section('content')
 
+    @if(Session::has('deleted_user'))
+
+        <h3 style="color:red">{{session('deleted_user')}}</h3>
+
+    @endif
+
     <h2>Users</h2>
 
     <table class="table">
