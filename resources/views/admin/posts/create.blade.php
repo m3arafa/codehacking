@@ -1,7 +1,9 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: m3arafa
- * Date: 24/03/18
- * Time: 04:49 م
- */
+@extends('layouts.admin')
+
+
+@section('content')
+
+
+    <h2>Create Post</h2>
+
+@stop
