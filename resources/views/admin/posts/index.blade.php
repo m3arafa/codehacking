@@ -26,13 +26,13 @@
         @if($posts)
             @foreach($posts as $post)
                 <tr>
-                    <td>{{$post->id}}</td>
+                    <td><a href="{{route('admin.posts.edit', $post->id)}}">{{$post->id}}</a></td>
                     <td><img height="40" src="{{$post->photo ? $post->photo->path : 'http://placehold.it/400x400'}}"
                              alt=""></td>
                     <td>{{$post->user->name}}</td>
                     <td>{{$post->category ? $post->category->name : "None"}}</td>
                     <td>{{$post->title}}</td>
-                    <td>{{$post->body}}</td>
+                    <td>{{str_limit($post->body, 30)}}</td>
                     <td>{{$post->created_at->diffForHumans()}}</td>
                     <td>{{$post->updated_at->diffForHumans()}}</td>
                 </tr>
