@@ -7,7 +7,7 @@
 
     <div class="col-sm-3">
 
-        <img src="{{$user->photo->path}}" alt="" class="img-responsive img-rounded">
+        <img src="{{$user->photo? $user->photo->path : "Empty"}}" alt="" class="img-responsive img-rounded">
 
     </div>
 
