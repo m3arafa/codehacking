@@ -11,6 +11,9 @@
         <thead>
         <tr>
             <th>Id</th>
+            <th></th>
+            <th></th>
+            <th></th>
             <th>Photo</th>
             <th>User</th>
             <th>Category</th>
@@ -26,7 +29,10 @@
         @if($posts)
             @foreach($posts as $post)
                 <tr>
-                    <td><a href="{{route('admin.posts.edit', $post->id)}}">{{$post->id}}</a></td>
+                    <td>{{$post->id}}</td>
+                    <td><a href="{{route('home.post', $post->id)}}">View</a></td>
+                    <td><a href="{{route('admin.posts.edit', $post->id)}}">Edit</a></td>
+                    <td><a href="{{route('admin.comments.show', $post->id)}}">Comments</a></td>
                     <td><img height="40" src="{{$post->photo ? $post->photo->path : 'http://placehold.it/400x400'}}"
                              alt=""></td>
                     <td>{{$post->user->name}}</td>
