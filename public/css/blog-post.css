@@ -11,3 +11,12 @@ body {
 footer {
     margin: 50px 0;
 }
+
+.nested-comment {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.comment-reply {
+    display: none;
+}
