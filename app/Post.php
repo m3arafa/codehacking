@@ -2,10 +2,29 @@
 
 namespace App;
 
+
 use Illuminate\Database\Eloquent\Model;
+
+use Cviebrock\EloquentSluggable\Sluggable;
+use Cviebrock\EloquentSluggable\SluggableScopeHelpers;
+use Cocur\Slugify\SlugifyInterface;
 
 class Post extends Model
 {
+    use Sluggable;
+    use SluggableScopeHelpers;
+
+    public function sluggable()
+    {
+        return [
+            'slug' => [
+                'source' => 'title',
+                'onUpdate' => true,
+            ]
+        ];
+    }
+
+
     protected $fillable = [
         'category_id',
         'photo_id',

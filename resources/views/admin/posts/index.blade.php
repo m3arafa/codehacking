@@ -30,7 +30,7 @@
             @foreach($posts as $post)
                 <tr>
                     <td>{{$post->id}}</td>
-                    <td><a href="{{route('home.post', $post->id)}}">View</a></td>
+                    <td><a href="{{route('home.post', $post->slug)}}">View</a></td>
                     <td><a href="{{route('admin.posts.edit', $post->id)}}">Edit</a></td>
                     <td><a href="{{route('admin.comments.show', $post->id)}}">Comments</a></td>
                     <td><img height="40" src="{{$post->photo ? $post->photo->path : 'http://placehold.it/400x400'}}"
@@ -47,5 +47,13 @@
         @endif
         </tbody>
     </table>
+
+    <div class="row">
+        <div class="col-sm-offset-5">
+
+            {{$posts->render()}}
+
+        </div>
+    </div>
 
 @stop
